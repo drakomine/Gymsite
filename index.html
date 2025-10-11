@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT MIND - Transform Your Body and Mind</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body> <nav class="navbar">
+        <div class="navbar-content"> <a href="#home" class="nav-logo">
+                <img src="https://example.net/IMG_20251011_125353.png" alt="FIT MIND Logo - Elevate Yourself">
+            </a>
+            
+            <div style="display: flex; align-items: center;">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Theme">
+                    <span class="icon">☀️</span>
+                </button>
+                
+                <div class="nav-menu-container">
+                    <button id="menu-toggle" class="menu-toggle-btn" aria-label="Open Navigation Menu">
+                        <span style="font-size: 2rem;">&#8942;</span> </button>
+                    <div id="nav-dropdown" class="nav-dropdown">
+                        <a href="#home">Home</a>
+                        <a href="#offer">Offerings</a>
+                        <a href="#timings">Timings</a>
+                        <a href="#contact-location">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="home" class="hero-section">
+        </section>
+
+    <section id="offer" class="section-padding">
+        </section>
+
+    <hr>
+    
+    <section id="timings" class="section-padding timings-section">
+        </section>
+    <hr>
+
+    <section id="contact-location" class="section-padding contact-stacked">
+        </section>
+
+    <hr>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>FIT MIND</strong></p>
+            <p>Ph: +91 86172 91700 (W/C)</p>
+            
+            <div class="social-links">
+                <a href="https://www.instagram.com/fit_mind_gym?igsh=bnMxazNpOXllZm04" target="_blank">
+                    <img src="https://stockimage.net/insta-icon.png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://stockimage.net/facebook-icon.png" alt="Facebook" class="social-icon">
+                </a>
+            </div>
+            
+            <p class="copyright">&copy; 2025 FIT MIND. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="sticky-social-btns">
+        <a href="https://wa.me/918617291700" target="_blank" class="social-sticky-btn whatsapp-btn" aria-label="Chat with us on WhatsApp">
+            &#x1F4AC; </a>
+        <a href="#" target="_blank" class="social-sticky-btn facebook-btn" aria-label="Follow us on Facebook">
+            &#x1F44D; </a>
+    </div>
+
+    <script>
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name-input').value;
+            const message = document.getElementById('message-input').value;
+            
+            if (name && message) {
+                const formattedMessage = `NAME: ${encodeURIComponent(name)}\nMESSAGE: ${encodeURIComponent(message)}`;
+                const whatsappURL = `https://wa.me/918617291700?text=${formattedMessage}`; // Changed to HTTPS format for better compatibility
+                window.open(whatsappURL, '_blank');
+            } else {
+                alert('Please fill out both your Name and Message.');
+            }
+        }
+
+        // Theme Toggle Logic
+        const body = document.body;
+        const themeToggle = document.getElementById('theme-toggle');
+        const menuToggle = document.getElementById('menu-toggle');
+        const navDropdown = document.getElementById('nav-dropdown');
+
+        function updateThemeIcon() {
+            const isDark = body.classList.contains('dark-theme');
+            themeToggle.querySelector('.icon').textContent = isDark ? '🌙' : '☀️';
+            themeToggle.setAttribute('title', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
+            updateThemeIcon();
+        });
+
+        // NEW: Menu Toggle Logic
+        menuToggle.addEventListener('click', () => {
+            navDropdown.classList.toggle('open');
+        });
+
+        // Close menu if a link is clicked or if user clicks outside
+        navDropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navDropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navDropdown.contains(event.target) || menuToggle.contains(event.target);
+            if (!isClickInsideMenu && navDropdown.classList.contains('open')) {
+                navDropdown.classList.remove('open');
+            }
+        });
+
+
+        // Load saved theme or use default (dark)
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.remove('dark-theme');
+        } else if (savedTheme === 'dark' || savedTheme === null) {
+             // Dark theme is default, explicitly set it
+             body.classList.add('dark-theme');
+        }
+        
+        // Initialize the correct icon on load
+        updateThemeIcon();
+    </script>
+
+</body>
+</html>
