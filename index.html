@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT MIND - Transform Your Body and Mind</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar">
+        <a href="#home" class="nav-logo">
+            <img src="IMG_20251011_125353.png" alt="FIT MIND Logo - Elevate Yourself" class="glow-nav">
+        </a>
+        <div class="nav-controls">
+            <button id="theme-toggle" class="theme-toggle-btn bounce" aria-label="Toggle Dark/Light Theme">
+                <span class="icon">🌙</span>
+            </button>
+            <button id="menu-toggle" class="menu-toggle-btn pulse" aria-label="Open Section Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="section-menu" class="menu-overlay">
+        <button class="close-btn" onclick="toggleMenu(false)">&times;</button>
+        <a href="#home" onclick="toggleMenu(false)">🏠 Home</a>
+        <a href="#offer" onclick="toggleMenu(false)">💪 What We Offer</a>
+        <a href="#addons" onclick="toggleMenu(false)">✨ Extra Addons</a> <a href="#timings" onclick="toggleMenu(false)">🕒 Gym Timings</a>
+        <a href="#contact-location" onclick="toggleMenu(false)">📍 Contact & Location</a>
+    </div>
+    
+    <section id="home" class="hero-section">
+        <div class="hero-content fade-in-up">
+            <img src="IMG_20251011_125353.png" alt="FIT MIND Logo - Elevate Yourself" class="hero-headline-logo glow">
+            <p class="description-text">
+                Transform your body and mind with our expert training. Join the **Fit Mind** community for personalized programs, state-of-the-art equipment, and a path to your strongest self.
+            </p>
+            <a href="tel:+918617291700" class="btn primary-btn animate-btn">START YOUR JOURNEY</a>
+        </div>
+        
+        <div class="stats-container fade-in">
+            <div class="stat-box">
+                <span class="stat-number" id="members-count" data-target="250">0+</span>
+                <span class="stat-label">Active Members</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-number" id="trainers-count" data-target="7">0+</span>
+                <span class="stat-label">Expert Trainers</span>
+            </div>
+        </div>
+
+        <div class="image-slider-wrapper">
+            <div class="slider-track" id="image-slider-track">
+                <img src="https://example.net/image1.jpg" alt="Gym Interior 1" class="slider-image">
+                <img src="https://example.net/image2.jpg" alt="Training Session 2" class="slider-image">
+                <img src="https://example.net/image3.jpg" alt="Group Class 3" class="slider-image">
+                <img src="https://example.net/image4.jpg" alt="Equipment View 4" class="slider-image">
+                <img src="https://example.net/image5.jpg" alt="Trainer 5" class="slider-image">
+                <img src="https://example.net/image6.jpg" alt="Gym Exterior 6" class="slider-image">
+            </div>
+            <div class="slider-dots"></div>
+        </div>
+    </section>
+
+    <section id="offer" class="section-padding">
+        <h2 class="section-heading animate-heading">What We Offer</h2>
+        <div class="programs-grid">
+            <div class="program-card fade-in-left"><span class="program-emoji">💃</span><h3>ZUMBA & GROUP FITNESS</h3><p>Get energized with our high-intensity, fun-filled Zumba sessions. Perfect for burning calories, improving cardio, and socializing in a vibrant group setting.</p></div>
+            <div class="program-card fade-in"><span class="program-emoji">⚖️</span><h3>WEIGHT LOSS PROGRAM</h3><p>Our personalized plans combine targeted workouts and nutrition coaching to help you shed pounds safely and sustainably. Start seeing real results today.</p></div>
+            <div class="program-card fade-in-right"><span class="program-emoji">💪</span><h3>WEIGHT GAIN & MUSCLE</h3><p>Build lean muscle and achieve your ideal physique with custom strength training routines. We focus on proper form, progressive overload, and healthy weight gain.</p></div>
+            
+            <div class="program-card fade-in">
+                <span class="program-emoji">🏃‍♂️</span>
+                <h3>CARDIO FITNESS</h3>
+                <p>Boost your endurance and heart health with our range of treadmills, ellipticals, and stationary bikes. Perfect for warm-ups and high-intensity interval training.</p>
+            </div>
+            <div class="program-card fade-in">
+                <span class="program-emoji">🏋️‍♀️</span>
+                <h3>STRENGTH TRAINING</h3>
+                <p>Develop functional strength with our guided routines using free weights, resistance bands, and bodyweight exercises to build a solid foundation.</p>
+            </div>
+            <div class="program-card fade-in">
+                <span class="program-emoji">🏋️‍♂️</span>
+                <h3>WEIGHT LIFTING</h3>
+                <p>Take your strength to the next level with dedicated areas for deadlifts, squats, and bench presses, equipped with premium barbells and plates.</p>
+            </div>
+        </div>
+    </section>
+    <hr class="fade-in">
+
+    <section id="addons" class="section-padding">
+        <h2 class="section-heading animate-heading">✨ Extra Addons</h2>
+        <div class="programs-grid">
+            <div class="program-card fade-in-left">
+                <span class="program-emoji">💻</span>
+                <h3>ONLINE CLASSES</h3>
+                <p>Access our high-quality fitness classes from the comfort of your home. Stay consistent with live and on-demand sessions taught by our expert trainers.</p>
+            </div>
+            <div class="program-card fade-in">
+                <span class="program-emoji">🍎</span>
+                <h3>CUSTOM DIET PLANS</h3>
+                <p>Achieve your nutritional goals with personalized diet plans tailored to your body type, preferences, and fitness objectives for optimal results.</p>
+            </div>
+            <div class="program-card fade-in-right">
+                <span class="program-emoji">🧑‍🏫</span>
+                <h3>PERSONAL TRAINER</h3>
+                <p>Get one-on-one guidance and motivation with a dedicated personal trainer. Customized workouts and constant support to fast-track your progress.</p>
+            </div>
+        </div>
+    </section>
+    <hr class="fade-in">
+
+    <section id="timings" class="section-padding timings-section">
+        <h2 class="timings-header section-heading animate-heading">🕒 Gym Timings</h2>
+        <div class="timings-card card fade-in-up">
+            <div class="time-block"><h4>Monday – Saturday</h4><p class="time-hours">⏰ 6:00 AM – 10:00 PM</p></div>
+            <div class="time-block"><h4>Sunday</h4><p class="time-hours">⏰ 6:00 AM – 12:00 PM</p></div>
+            <p class="note pop-in"><span class="strong-note">💪 Note:</span> From **1:00 PM to 4:00 PM**, the gym is **reserved for women only**.</p>
+        </div>
+    </section>
+    <hr class="fade-in">
+
+    <section id="contact-location" class="section-padding">
+        <h2 class="section-heading animate-heading">Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info card fade-in-left">
+                <h3>Contact Us 📞</h3>
+                <p><i class="fas fa-phone-alt"></i> **Phone:** +91 86172 91700</p>
+                <p><i class="fas fa-envelope"></i> **Email:** info@fitmind.com (Fictional)</p>
+                <p><i class="fas fa-map-marker-alt"></i> **Address:** Singur, West Bengal, India</p>
+                <a href="https://share.google/6TFSDV5HDmYgJC1bG" target="_blank" class="btn secondary-btn animate-btn mt-30">GET DIRECTIONS <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="message-form card fade-in-right">
+                <h3>Send Us a Message 👋</h3>
+                <form id="whatsapp-form" onsubmit="return false;">
+                    <div class="form-group"><label for="name-input">Your Name</label><input type="text" id="name-input" placeholder="Enter your name" required></div>
+                    <div class="form-group"><label for="message-input">Your Message</label><textarea id="message-input" rows="5" placeholder="Tell us about your fitness goals..." required></textarea></div>
+                    <button type="button" class="btn primary-btn animate-btn" onclick="sendWhatsAppMessage()"><i class="fab fa-whatsapp"></i> SEND VIA WHATSAPP</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <hr class="fade-in">
+
+    <footer>
+        <div class="footer-top-section fade-in">
+            <img src="IMG_20251011_125353.png" alt="FIT MIND Logo" class="footer-logo">
+            <p class="footer-tagline">Transform Your Body and Mind</p>
+        </div>
+        <div class="footer-main-section fade-in">
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Refund Policy</a>
+            </div>
+            <div class="footer-column">
+                <h4>Gym</h4>
+                <a href="#home">HOME</a>
+                <a href="#offer">WHAT WE OFFER</a>
+                <a href="#addons">EXTRA ADDONS</a> <a href="#timings">GYM TIMINGS</a>
+                <a href="#contact-location">CONTACT & LOCATION</a>
+            </div>
+            <div class="footer-column">
+                <h4>Social Media</h4>
+                <a href="https://wa.me/918617291700" target="_blank">WhatsApp</a>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/fit_mind_gym?igsh=bnMxazNpOXllZm04" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact us</h4>
+                <a href="mailto:info@fitmind.com">Gmail</a>
+                <a href="tel:+918617291700">Call</a>
+                <a href="https://wa.me/918617291700" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom fade-in">
+            <p>&copy; 2025 Fit Mind. All Rights Reserved. Designed for Fit Mind</p>
+        </div>
+    </footer>
+
+
+    <a href="https://wa.me/918617291700" class="whatsapp-float pulse" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <script>document.addEventListener("DOMContentLoaded",()=>{window.sendWhatsAppMessage=function(){const e=document.getElementById("name-input").value,t=document.getElementById("message-input").value;e&&t?window.open(`https://wa.me/918617291700?text=NAME: ${encodeURIComponent(e)}\nMESSAGE: ${encodeURIComponent(t)}`,"_blank"):alert("Please fill out both your Name and Message.")};const e=document.body,t=document.getElementById("theme-toggle");function n(){const n=e.classList.contains("dark-theme");t.querySelector(".icon").textContent=n?"🌙":"☀️",t.setAttribute("title",n?"Switch to Light Theme":"Switch to Dark Theme")}t.addEventListener("click",()=>{e.classList.toggle("dark-theme"),localStorage.setItem("theme",e.classList.contains("dark-theme")?"dark":"light"),n()});const o=document.getElementById("section-menu"),a=document.getElementById("menu-toggle");window.toggleMenu=function(e){e?(o.style.display="flex",document.body.style.overflow="hidden"):(o.style.display="none",document.body.style.overflow="")},a.addEventListener("click",()=>{const e="flex"===o.style.display;toggleMenu(!e)});const i=localStorage.getItem("theme");"light"===i?e.classList.remove("dark-theme"):"dark"!==i&&null!==i||e.classList.add("dark-theme"),n();const d=document.getElementById("image-slider-track"),l=Array.from(d.children),c=document.querySelector(".slider-dots");let r=0,s;function m(){d.style.transform=`translateX(-${100*r}%)`,p()}function u(){l.forEach((e,t)=>{const n=document.createElement("span");n.classList.add("dot"),t===r&&n.classList.add("active"),n.addEventListener("click",()=>{r=t,m(),g()}),c.appendChild(n)})}function p(){Array.from(c.children).forEach((e,t)=>{e.classList.toggle("active",t===r)})}function h(){r=(r+1)%l.length,m()}function f(){s=setInterval(h,3e3)}function g(){clearInterval(s),f()}u(),f(),m();const w=document.querySelectorAll(".fade-in, .fade-in-up, .fade-in-left, .fade-in-right, .animate-heading, .animate-btn, .pop-in"),y=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?e.target.classList.add("is-visible"):e.target.classList.remove("is-visible")})},{threshold:.1});w.forEach(e=>{y.observe(e)});const v=new IntersectionObserver((e,t)=>{e.forEach(e=>{if(e.isIntersecting){const n=e.target;b(n),t.unobserve(n)}})},{threshold:.5}),k=[document.getElementById("members-count"),document.getElementById("trainers-count")];function b(e){const t=parseInt(e.dataset.target,10);let n=null;!function o(a){n||(n=a);const i=a-n,d=Math.min(Math.floor(i/2e3*t),t);e.textContent=d+"+",i<2e3?window.requestAnimationFrame(o):e.textContent=t+"+"}(performance.now())}k.forEach(e=>{e&&v.observe(e)})});</script>
+
+</body>
+</html>
