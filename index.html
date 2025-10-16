@@ -10,22 +10,36 @@
 </head>
 <body class="dark-theme">
 
-    <nav class="navbar">
-        <a href="#home" class="nav-logo">
-            <img src="IMG_20251011_125353.png" alt="FIT MIND Logo - Elevate Yourself" class="glow-nav">
-        </a>
-        <div class="nav-controls">
-            <button id="theme-toggle" class="theme-toggle-btn bounce" aria-label="Toggle Dark/Light Theme">
-                <span class="icon">🌙</span>
-            </button>
-            <button id="menu-toggle" class="menu-toggle-btn pulse" aria-label="Open Section Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+    <div id="offer-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button id="close-popup" class="popup-close">&times;</button>
+            <img src="IMG_20251011_125353.png" alt="FIT MIND Logo" class="popup-logo">
+            <div class="popup-icon-placeholder"></div>
+            <h3 class="popup-title">Kali Puja Special Offer</h3>
+            <h2 class="popup-discount">50% OFF</h2>
+            <a href="#contact-location" id="popup-contact-btn" class="btn popup-btn">Contact us</a>
+            <p class="popup-footer">&copy; Web Talks Pvt. Designed for Fit Mind Gym</p>
         </div>
-    </nav>
+    </div>
 
-    <div class="marquee-container">
-        <p class="marquee-text">🎉 Hurry Now! Limited-Time Offers on All Memberships! Join Today! 🎉 Hurry Now! Limited-Time Offers on All Memberships! Join Today! 🎉</p>
+
+    <div class="fixed-header-container">
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">
+                <img src="IMG_20251011_125353.png" alt="FIT MIND Logo - Elevate Yourself" class="glow-nav">
+            </a>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle-btn bounce" aria-label="Toggle Dark/Light Theme">
+                    <span class="icon">🌙</span>
+                </button>
+                <button id="menu-toggle" class="menu-toggle-btn pulse" aria-label="Open Section Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="marquee-container">
+            <p class="marquee-text">🎉 Hurry Now! Limited-Time Offers on All Memberships! Join Today! 🎉 Hurry Now! Limited-Time Offers on All Memberships! Join Today! 🎉</p>
+        </div>
     </div>
 
     <div id="section-menu" class="menu-overlay">
@@ -118,7 +132,38 @@
         <div class="footer-bottom fade-in"><p>&copy; 2025 Fit Mind. All Rights Reserved. Designed for Fit Mind</p></div>
     </footer>
     <a href="https://wa.me/918617291700" class="whatsapp-float pulse" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <script>document.addEventListener("DOMContentLoaded",()=>{window.sendWhatsAppMessage=function(){const e=document.getElementById("name-input").value,t=document.getElementById("message-input").value;e&&t?window.open(`https://wa.me/918617291700?text=NAME: ${encodeURIComponent(e)}\nMESSAGE: ${encodeURIComponent(t)}`,"_blank"):alert("Please fill out both your Name and Message.")};const e=document.body,t=document.getElementById("theme-toggle");function n(){const n=e.classList.contains("dark-theme");t.querySelector(".icon").textContent=n?"🌙":"☀️",t.setAttribute("title",n?"Switch to Light Theme":"Switch to Dark Theme")}t.addEventListener("click",()=>{e.classList.toggle("dark-theme"),localStorage.setItem("theme",e.classList.contains("dark-theme")?"dark":"light"),n()});const o=document.getElementById("section-menu"),a=document.getElementById("menu-toggle");window.toggleMenu=function(e){e?(o.style.display="flex",document.body.style.overflow="hidden"):(o.style.display="none",document.body.style.overflow="")},a.addEventListener("click",()=>{const e="flex"===o.style.display;toggleMenu(!e)});const i=localStorage.getItem("theme");"light"===i?e.classList.remove("dark-theme"):"dark"!==i&&null!==i||e.classList.add("dark-theme"),n();const d=document.getElementById("image-slider-track"),l=Array.from(d.children),c=document.querySelector(".slider-dots");let r=0,s;function m(){d.style.transform=`translateX(-${100*r}%)`,p()}function u(){l.forEach((e,t)=>{const n=document.createElement("span");n.classList.add("dot"),t===r&&n.classList.add("active"),n.addEventListener("click",()=>{r=t,m(),g()}),c.appendChild(n)})}function p(){Array.from(c.children).forEach((e,t)=>{e.classList.toggle("active",t===r)})}function h(){r=(r+1)%l.length,m()}function f(){s=setInterval(h,3e3)}function g(){clearInterval(s),f()}u(),f(),m();const w=document.querySelectorAll(".fade-in, .fade-in-up, .fade-in-left, .fade-in-right, .animate-heading, .animate-btn, .pop-in"),y=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?e.target.classList.add("is-visible"):e.target.classList.remove("is-visible")})},{threshold:.1});w.forEach(e=>{y.observe(e)});const v=new IntersectionObserver((e,t)=>{e.forEach(e=>{if(e.isIntersecting){const n=e.target;b(n),t.unobserve(n)}})},{threshold:.5}),k=[document.getElementById("members-count"),document.getElementById("trainers-count")];function b(e){const t=parseInt(e.dataset.target,10);let n=null;!function o(a){n||(n=a);const i=a-n,d=Math.min(Math.floor(i/2e3*t),t);e.textContent=d+"+",i<2e3?window.requestAnimationFrame(o):e.textContent=t+"+"}(performance.now())}k.forEach(e=>{e&&v.observe(e)})});</script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // NEW: Popup Logic
+            const popup = document.getElementById('offer-popup');
+            const closeBtn = document.getElementById('close-popup');
+            const contactBtn = document.getElementById('popup-contact-btn');
+            
+            // Show popup after 2 seconds
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 2000);
+
+            // Function to close the popup
+            const closePopup = () => {
+                popup.style.display = 'none';
+            };
+
+            closeBtn.addEventListener('click', closePopup);
+            contactBtn.addEventListener('click', closePopup); // Also close popup when contact is clicked
+
+            // Close popup if user clicks on the dark overlay
+            popup.addEventListener('click', (event) => {
+                if (event.target === popup) {
+                    closePopup();
+                }
+            });
+
+            // --- ALL PREVIOUS JAVASCRIPT IS UNCHANGED ---
+            window.sendWhatsAppMessage=function(){const e=document.getElementById("name-input").value,t=document.getElementById("message-input").value;e&&t?window.open(`https://wa.me/918617291700?text=NAME: ${encodeURIComponent(e)}\nMESSAGE: ${encodeURIComponent(t)}`,"_blank"):alert("Please fill out both your Name and Message.")};const e=document.body,t=document.getElementById("theme-toggle");function n(){const n=e.classList.contains("dark-theme");t.querySelector(".icon").textContent=n?"🌙":"☀️",t.setAttribute("title",n?"Switch to Light Theme":"Switch to Dark Theme")}t.addEventListener("click",()=>{e.classList.toggle("dark-theme"),localStorage.setItem("theme",e.classList.contains("dark-theme")?"dark":"light"),n()});const o=document.getElementById("section-menu"),a=document.getElementById("menu-toggle");window.toggleMenu=function(e){e?(o.style.display="flex",document.body.style.overflow="hidden"):(o.style.display="none",document.body.style.overflow="")},a.addEventListener("click",()=>{const e="flex"===o.style.display;toggleMenu(!e)});const i=localStorage.getItem("theme");"light"===i?e.classList.remove("dark-theme"):"dark"!==i&&null!==i||e.classList.add("dark-theme"),n();const d=document.getElementById("image-slider-track"),l=Array.from(d.children),c=document.querySelector(".slider-dots");let r=0,s;function m(){d.style.transform=`translateX(-${100*r}%)`,p()}function u(){l.forEach((e,t)=>{const n=document.createElement("span");n.classList.add("dot"),t===r&&n.classList.add("active"),n.addEventListener("click",()=>{r=t,m(),g()}),c.appendChild(n)})}function p(){Array.from(c.children).forEach((e,t)=>{e.classList.toggle("active",t===r)})}function h(){r=(r+1)%l.length,m()}function f(){s=setInterval(h,3e3)}function g(){clearInterval(s),f()}u(),f(),m();const w=document.querySelectorAll(".fade-in, .fade-in-up, .fade-in-left, .fade-in-right, .animate-heading, .animate-btn, .pop-in"),y=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting?e.target.classList.add("is-visible"):e.target.classList.remove("is-visible")})},{threshold:.1});w.forEach(e=>{y.observe(e)});const v=new IntersectionObserver((e,t)=>{e.forEach(e=>{if(e.isIntersecting){const n=e.target;b(n),t.unobserve(n)}})},{threshold:.5}),k=[document.getElementById("members-count"),document.getElementById("trainers-count")];function b(e){const t=parseInt(e.dataset.target,10);let n=null;!function o(a){n||(n=a);const i=a-n,d=Math.min(Math.floor(i/2e3*t),t);e.textContent=d+"+",i<2e3?window.requestAnimationFrame(o):e.textContent=t+"+"}(performance.now())}k.forEach(e=>{e&&v.observe(e)})
+        });
+    </script>
 
 </body>
 </html>
